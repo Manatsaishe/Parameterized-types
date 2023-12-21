@@ -1,6 +1,6 @@
 // Parent class
 class Animal {
-    // Common attributes and methods for all animals
+
 }
 
 interface Run {
@@ -8,10 +8,10 @@ interface Run {
 }
 
 interface Speak {
-    void speak(); // Method to be implemented by classes
+    void speak(); 
 }
 
-// Dog class implementing Run and Speak
+
 class Dog extends Animal implements Run, Speak {
     @Override
     public void run() {
@@ -24,7 +24,6 @@ class Dog extends Animal implements Run, Speak {
     }
 }
 
-// Cat class implementing Run and Speak
 class Cat extends Animal implements Run, Speak {
     @Override
     public void run() {
@@ -37,12 +36,12 @@ class Cat extends Animal implements Run, Speak {
     }
 }
 
-// Shark class which does not implement Run and Speak
+
 class Shark extends Animal {
-    // Shark specific methods
+    
 }
 
-// HomeAnimal class
+
 class HomeAnimal<T extends Animal & Run & Speak> {
     private T animal;
 
@@ -69,7 +68,7 @@ public class Main {
         HomeAnimal<Dog> homeDog = new HomeAnimal<>(new Dog());
         HomeAnimal<Cat> homeCat = new HomeAnimal<>(new Cat());
 
-        // Using HomeAnimal methods
+        
         homeDog.getAnimal().run();
         homeDog.getAnimal().speak();
         homeDog.sleepOnTheCouch();
@@ -78,7 +77,5 @@ public class Main {
         homeCat.getAnimal().speak();
         homeCat.sleepOnTheCouch();
 
-        // Trying to create a Shark object (will fail at compile time)
-        // HomeAnimal<Shark> homeShark = new HomeAnimal<>(new Shark()); // This line will cause a compilation error
     }
 }
