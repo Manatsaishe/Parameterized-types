@@ -1,10 +1,8 @@
-// Parent class
 class Animal {
-
 }
 
 interface Run {
-    void run(); // Method to be implemented by classes
+    void run();
 }
 
 interface Speak {
@@ -35,7 +33,6 @@ class Cat extends Animal implements Run, Speak {
         System.out.println("Cat meows");
     }
 }
-
 
 class Shark extends Animal {
     
